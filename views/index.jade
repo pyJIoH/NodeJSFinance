@@ -3,4 +3,25 @@ extends layout
 block content
     h1= title
     p Welcome to #{title}
-    p Company name is #{name}
+    div.container
+        div.content
+            table.table.table-striped
+                thead
+                    tr
+                        th Title
+                        th Income
+                        th Outcome
+                        th Profit
+                tbody
+                    tr
+                        td #{title1}
+                        td #{income1}
+                        td #{outcome1}
+                        td #{profit1}
+                    tr
+                        td #{title2}
+                        td #{income2}
+                        td #{outcome2}
+                        td #{profit2}
+    div.footer
+
