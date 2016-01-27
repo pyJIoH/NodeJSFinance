@@ -31,9 +31,9 @@ var row1 = new Accounting({
 
 var row2 = new Accounting({
     title: "OOO Vozrojdenie",
-    income: 0,
-    outcome: 5000,
-    profit: 300
+    income: 10000,
+    outcome: 0,
+    profit: 500
 });
 
 /* GET home page. */
