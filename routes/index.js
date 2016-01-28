@@ -18,7 +18,7 @@ router.get('/', function (req, res, next) {
     Finance.find({}, function(err, elems) {
         res.render('index', {
             title: 'Express',
-            rows: elems
+            rows: elems || {}
         });
     });
 });
