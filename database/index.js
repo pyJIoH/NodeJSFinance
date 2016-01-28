@@ -1,15 +1,15 @@
 var express = require('express');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+var config = require('config');
+
+mongoose.connect(config.get('mongo:uri'), config.get('mongoose:options'));
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function () {
     console.log('Connected');
 });
 
-var Schema = mongoose.Schema;
-
-var financeSchema = new Schema({
+var financeSchema = mongoose.Schema({
     title: String,
     date: {type: Date, default: Date.now},
     income: Number,
@@ -35,6 +35,8 @@ var row2 = new Finance({
 });
 
 var exports = {};
+
+console.log(row1);
 
 exports.getData = function () {
     return [row1, row2]
