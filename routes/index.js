@@ -15,10 +15,10 @@ var Finance = require('models/finance').Finance;
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    Finance.find({}, function(err, elems) {
+    Finance.find({}, function(err, rows) {
         res.render('index', {
-            title: 'Express',
-            rows: elems || {}
+            'title': 'Express',
+            'rows': rows || {}
         });
     });
 });
