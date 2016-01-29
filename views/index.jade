@@ -1,23 +1,35 @@
 extends layout
 
 block content
-    h1= title
-    p Welcome to #{title}
     div.container
-        div.content
-            table.table.table-striped
-                thead
+        form.form-inline(role='form')
+            .form-group
+                label(for='title') Title:
+                input#title.form-control
+            .form-group
+                label(for='income') Income:
+                input#income.form-control(type='number')
+            .form-group
+                label(for='outcome') Outcome:
+                input#outcome.form-control(type='number')
+            .form-group
+                label(for='profit') Profit:
+                input#profit.form-control(type='number')
+            button.btn.btn-default(type='submit') Add
+
+        table.table.table-striped
+            thead
+                tr
+                    th Title
+                    th Income
+                    th Outcome
+                    th Profit
+            tbody
+                each row, i in rows
                     tr
-                        th Title
-                        th Income
-                        th Outcome
-                        th Profit
-                tbody
-                    each row, i in rows
-                        tr
-                            td #{row.title}
-                            td #{row.income}
-                            td #{row.outcome}
-                            td #{row.profit}
+                        td #{row.title}
+                        td #{row.income}
+                        td #{row.outcome}
+                        td #{row.profit}
     div.footer
 

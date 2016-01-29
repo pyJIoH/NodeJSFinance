@@ -6,3 +6,8 @@ body {
 a {
   color: #00B7FF;
 }
+
+label, #profit {
+  margin-left: 10px;
+  margin-right: 10px;
+}

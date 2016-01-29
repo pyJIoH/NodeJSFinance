@@ -17,7 +17,6 @@ var Finance = require('models/finance').Finance;
 router.get('/', function (req, res, next) {
     Finance.find({}, function(err, rows) {
         res.render('index', {
-            'title': 'Express',
             'rows': rows || {}
         });
     });
