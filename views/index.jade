@@ -11,18 +11,18 @@ block content
                     th Profit
                     th Action
             tbody
-                tr
+                tr#addUser
                     td
                         input#title
                     td
-                        input#income(type='number')
+                        input#income(type='number', value='0')
                     td
-                        input#oucome(type='number')
+                        input#outcome(type='number', value='0')
                     td
-                        input#profit(type='number')
+                        input#profit(type='number', value='0')
                     td
-                        #add.a.btn.btn-success.glyphicon.glyphicon-plus
-                each row, i in rows
+                        a.btn.btn-success.glyphicon.glyphicon-plus#add
+                each row in rows
                     tr
                         td #{row.title}
                         td #{row.income}
@@ -31,4 +31,3 @@ block content
                         td
                             a.btn.btn-danger.glyphicon.glyphicon-remove(id='#{row.id}')
     div.footer
-

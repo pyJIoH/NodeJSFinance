@@ -14,6 +14,7 @@
     "mongoose": "latest",
     "morgan": "~1.6.1",
     "nconf": "latest",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "chart.js": "latest"
   }
 }

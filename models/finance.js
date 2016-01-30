@@ -1,7 +1,7 @@
 var mongoose = require('database/mongoose');
 
 var financeSchema = mongoose.Schema({
-    title: String,
+    title: {type: String, required: true},
     date: {type: Date, default: Date.now},
     income: Number,
     outcome: Number,
