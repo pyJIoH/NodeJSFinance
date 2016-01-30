@@ -17,7 +17,8 @@ router.get('/', function (req, res, next) {
 router.post('/add', function (req, res) {
     var finance = new Finance(req.body);
     finance.save(function (err, user, affected) {
-        console.log(arguments);
+        if (err) throw err;
+        res.send({data: finance, msg: ''});
     });
 });
 
