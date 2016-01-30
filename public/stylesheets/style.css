@@ -7,7 +7,15 @@ a {
   color: #00B7FF;
 }
 
-label, #profit {
+label{
   margin-left: 10px;
   margin-right: 10px;
+}
+
+#profit {
+  margin-right: 10px;
+}
+
+table {
+  margin-top: 50px;
 }
