@@ -18,13 +18,14 @@ $(document).ready(function () {
             var row = response.data;
             if (response.msg === '') {
                 $('td input').val('');
-                var row = '<tr><td>' + row.title +
-                            '</td><td>' + row.income +
-                            '</td><td>' + row.outcome +
-                            '</td><td>' + row.profit +
-                            '</td><td><a id=\"' + row._id +
-                            '\" class="btn-remove btn btn-danger glyphicon glyphicon-remove"></a></td></tr>';
+                var row = '<tr><td>' +
+                    row.title + '</td><td>' +
+                    row.income + '</td><td>' +
+                    row.outcome + '</td><td>' +
+                    row.profit + '</td><td>' +
+                    '<a id=\"' + row._id + '\" class="btn-remove btn btn-danger glyphicon glyphicon-remove"></a>' + '</td></tr>';
                 $('table tbody').append(row);
+                $('.btn-remove').on('click', remove);
             }
             else {
                 alert('Error: ' + response.msg);
@@ -32,9 +33,8 @@ $(document).ready(function () {
         });
     });
 
-    $('.btn-remove').on('click', function (event) {
+    function remove(event) {
         event.preventDefault();
-
         $.ajax({
             type: 'DELETE',
             url: '/delete/' + $(this).attr('id')
@@ -46,5 +46,7 @@ $(document).ready(function () {
                 alert('Error: ' + response.msg);
             }
         }.bind(this));
-    });
+    }
+
+    $('.btn-remove').on('click', remove);
 });

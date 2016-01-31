@@ -2,6 +2,7 @@ extends layout
 
 block content
     div.container
+        a.btn.btn-default.pull-right.glyphicon.glyphicon-stats(href='/chart', title='Chart')
         table.table.table-striped
             thead
                 tr
@@ -22,12 +23,12 @@ block content
                         input#profit(type='number', value='0')
                     td
                         a.btn.btn-success.glyphicon.glyphicon-plus#add
-            each row in rows
-                tr
-                    td #{row.title}
-                    td #{row.income}
-                    td #{row.outcome}
-                    td #{row.profit}
-                    td
-                        a.btn-remove.btn.btn-danger.glyphicon.glyphicon-remove(id='#{row.id}')
+                each row in rows
+                    tr
+                        td #{row.title}
+                        td #{row.income}
+                        td #{row.outcome}
+                        td #{row.profit}
+                        td
+                            a.btn-remove.btn.btn-danger.glyphicon.glyphicon-remove(id='#{row.id}')
     div.footer
