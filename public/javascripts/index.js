@@ -16,7 +16,24 @@ $(document).ready(function () {
             dataType: 'JSON'
         }).done(function (response) {
             if (response.msg === '') {
-                $('#addUser td input').val('');
+                $('td input').val('');
+                //add a row, response.data
+            }
+            else {
+                alert('Error: ' + response.msg);
+            }
+        });
+    });
+
+    $('.btn-remove').on('click', function (event) {
+        event.preventDefault();
+
+        $.ajax({
+            type: 'DELETE',
+            url: '/delete/' + $(this).attr('id')
+        }).done(function (response) {
+            if (response.msg === '') {
+            //delete a row
             }
             else {
                 alert('Error: ' + response.msg);

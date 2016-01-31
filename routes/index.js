@@ -16,14 +16,19 @@ router.get('/', function (req, res, next) {
  */
 router.post('/add', function (req, res) {
     var finance = new Finance(req.body);
-    finance.save(function (err, user, affected) {
-        if (err) throw err;
-        res.send({data: finance, msg: ''});
+    finance.save(function (err, finance, affected) {
+        res.send({data: finance, msg: err ? err.message : ''});
     });
 });
 
-//router.delete('/delete/:id', function(req, res) {
-//
-//});
+/*
+ * DELETE a row by id
+ */
+router.delete('/delete/:id', function (req, res) {
+    Finance.remove({_id: req.params.id}, function (err, obj) {
+        console.log(obj.result.n);
+        res.send({msg: err ? err.message : ''});
+    });
+});
 
 module.exports = router;
