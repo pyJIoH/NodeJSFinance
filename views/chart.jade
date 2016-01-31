@@ -7,4 +7,8 @@ html
     body
         block content
             div.container
-                p Hi, chart!
+                row.col-md-12
+                    canvas#chart
+        script(src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js')
+        script(src='/javascripts/Chartjs/Chart.min.js')
+        script(src='/javascripts/chart.js')

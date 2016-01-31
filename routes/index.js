@@ -26,7 +26,6 @@ router.post('/add', function (req, res) {
  */
 router.delete('/delete/:id', function (req, res) {
     Finance.remove({_id: req.params.id}, function (err, obj) {
-        console.log(obj.result.n);
         res.send({msg: err ? err.message : ''});
     });
 });

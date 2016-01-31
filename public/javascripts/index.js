@@ -17,7 +17,8 @@ $(document).ready(function () {
         }).done(function (response) {
             var row = response.data;
             if (response.msg === '') {
-                $('td input').val('');
+                $('td input').val('0');
+                $('#title').val('');
                 var row = '<tr><td>' +
                     row.title + '</td><td>' +
                     row.income + '</td><td>' +
