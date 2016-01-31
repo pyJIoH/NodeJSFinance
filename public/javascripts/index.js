@@ -15,9 +15,16 @@ $(document).ready(function () {
             url: '/add',
             dataType: 'JSON'
         }).done(function (response) {
+            var row = response.data;
             if (response.msg === '') {
                 $('td input').val('');
-                //add a row, response.data
+                var row = '<tr><td>' + row.title +
+                            '</td><td>' + row.income +
+                            '</td><td>' + row.outcome +
+                            '</td><td>' + row.profit +
+                            '</td><td><a id=\"' + row._id +
+                            '\" class="btn-remove btn btn-danger glyphicon glyphicon-remove"></a></td></tr>';
+                $('table tbody').append(row);
             }
             else {
                 alert('Error: ' + response.msg);
@@ -33,11 +40,11 @@ $(document).ready(function () {
             url: '/delete/' + $(this).attr('id')
         }).done(function (response) {
             if (response.msg === '') {
-            //delete a row
+                $(this).parent().parent().remove();
             }
             else {
                 alert('Error: ' + response.msg);
             }
-        });
+        }.bind(this));
     });
 });
