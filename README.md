@@ -9,16 +9,16 @@ A complete sample project for front-end and back-end developers. Teaching the ba
 
 There are two pages. 
 
-First page contains a simple table
+The first page contains a simple table
 
 ![alt tag](https://img-fotki.yandex.ru/get/39073/11245482.4/0_a1779_13ee0465_X5L)
 
-And seconds page displays MongoDB data with a chart
+And the seconds page displays MongoDB data with a chart
 ![alt tag](https://img-fotki.yandex.ru/get/45886/11245482.4/0_a1778_2787f5bd_X5L)
 
 ## Structure
-* /www - http server
-* /config - connection information
+* /www - Http server
+* /config - Connection information
 * /database - Mongoose db connection
 * /models - Schema and model for MongoDB
 * /public - Static directories with public js and css
